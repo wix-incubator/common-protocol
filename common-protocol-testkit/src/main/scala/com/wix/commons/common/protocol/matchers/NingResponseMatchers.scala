@@ -15,7 +15,10 @@ import com.ning.http.client.{Response => NingResponse}
 import com.wix.commons.common.protocol.api.{Error, Response}
 
 
-/** This class is
+/** A trait that can be mixin with the test class or the [[org.specs2.matcher.Scope]].
+  * Another option is to import the method from the already mixin Companion Object.
+  *
+  * The trait introduces a matchers for HTTP responses, in this trait, ning's.
   *
   * @author <a href="mailto:ohadr@wix.com">Raz, Ohad</a>
   */
@@ -25,7 +28,8 @@ trait NingResponseMatchers {
 
   def beResponse[V : Manifest](value: Matcher[V] = AlwaysMatcher[V]()): Matcher[NingResponse] = {
     ===(HttpStatus.OK) ^^ { (_: NingResponse).getStatusCode aka "status" } and
-    value ^^ { (r: NingResponse) => Serialization.read[Response[V]](r.getResponseBody).value aka "response value" }
+    value ^^ { (r: NingResponse) =>
+      Serialization.read[Response[V]](r.getResponseBody).value aka "response value" }
   }
 
   def beError(error: Matcher[Error] = AlwaysMatcher[Error]()): Matcher[NingResponse] = {
@@ -36,6 +40,7 @@ trait NingResponseMatchers {
   def beForbidden: Matcher[NingResponse] = {
     ===(HttpStatus.FORBIDDEN) ^^ { (_: NingResponse).getStatusCode aka "status" }
   }
+
 
   object HttpStatus {
     val OK = 200
