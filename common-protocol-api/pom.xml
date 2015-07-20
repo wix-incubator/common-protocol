@@ -8,11 +8,15 @@
     <artifactId>common-protocol-api</artifactId>
 
 
-    <parent>
-        <artifactId>common-protocol</artifactId>
-        <groupId>com.wix.commons</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+    <groupId>com.wix.commons</groupId>
+    <packaging>jar</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <!--<parent>-->
+        <!--<artifactId>common-protocol</artifactId>-->
+        <!--<groupId>com.wix.commons</groupId>-->
+        <!--<version>1.0.0-SNAPSHOT</version>-->
+    <!--</parent>-->
 
 
     <developers>
@@ -31,7 +35,5 @@
             </roles>
         </developer>
     </developers>
-
-
 
 </project>

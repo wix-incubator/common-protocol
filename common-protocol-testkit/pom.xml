@@ -5,14 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
 
 
-    <parent>
-        <artifactId>common-protocol</artifactId>
-        <groupId>com.wix.commons</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
+    <!--<parent>-->
+        <!--<artifactId>common-protocol</artifactId>-->
+        <!--<groupId>com.wix.commons</groupId>-->
+        <!--<version>1.0.0-SNAPSHOT</version>-->
+    <!--</parent>-->
 
     <artifactId>common-protocol-testkit</artifactId>
+
+    <groupId>com.wix.commons</groupId>
+    <packaging>jar</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <scala.dependencies.version>2.11</scala.dependencies.version>
+        <scala.library.version>2.11.7</scala.library.version>
+        <org.specs2.version>3.6.1</org.specs2.version>
+        <com.ning.async-http-client.version>1.7.19</com.ning.async-http-client.version>
+        <org.json4js.version>3.2.11</org.json4js.version>
+
+        <java.source.version>1.7</java.source.version>
+        <java.target.version>1.7</java.target.version>
+    </properties>
 
 
     <dependencies>
