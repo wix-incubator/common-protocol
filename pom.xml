@@ -81,6 +81,19 @@
         </repository>
     </distributionManagement>
 
+
+    <!-- required for specs2 -->
+    <repositories>
+        <repository>
+            <id>scalaz-stream-bintray</id>
+            <url>http://dl.bintray.com/scalaz/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+
     <dependencies>
         <dependency>
             <groupId>org.scala-lang</groupId>
