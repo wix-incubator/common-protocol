@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <artifactId>common-protocol</artifactId>
+        <groupId>com.wix.commons</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+
+    <artifactId>common-protocol-testkit</artifactId>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.wix.commons</groupId>
+            <artifactId>common-protocol-api</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ning</groupId>
+            <artifactId>async-http-client</artifactId>
+            <version>${com.ning.async-http-client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-native_${scala.dependencies.version}</artifactId>
+            <version>${org.json4js.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-matcher_${scala.dependencies.version}</artifactId>
+            <version>${org.specs2.version}</version>
+        </dependency>
+    </dependencies>
+</project>
