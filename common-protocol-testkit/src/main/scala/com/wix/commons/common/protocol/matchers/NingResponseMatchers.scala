@@ -15,8 +15,8 @@ import com.ning.http.client.{Response => NingResponse}
 import com.wix.commons.common.protocol.api.{Error, Response}
 
 
-/** A trait that can be mixin with the test class or the [[org.specs2.matcher.Scope]].
-  * Another option is to import the method from the already mixin Companion Object.
+/** A trait that can be mixin with the test class or the context's {{{org.specs2.specification.Scope}}}.
+  * Another option is to import the methods from the already mixin Companion Object.
   *
   * The trait introduces a matchers for HTTP responses, in this trait, ning's.
   *
