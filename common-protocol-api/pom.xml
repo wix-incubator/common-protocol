@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
 
+    <!-- Group ID is required by LifeCycle. Do not remove -->
+    <groupId>com.wix.commons</groupId>
     <artifactId>common-protocol-api</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0-SNAPSHOT</version>
