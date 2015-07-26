@@ -41,13 +41,6 @@
         </license>
     </licenses>
 
-    <scm>
-        <url>https://github.com/wix/common-protocol</url>
-        <connection>scm:git:git@github.com:wix/common-protocol.git</connection>
-        <developerConnection>scm:git:git@github.com:wix/common-protocol.git</developerConnection>
-    </scm>
-
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
