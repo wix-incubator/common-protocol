@@ -7,14 +7,14 @@
     <groupId>com.wix.commons</groupId>
     <artifactId>common-protocol-api</artifactId>
     <packaging>jar</packaging>
-    <version>1.2.0</version>
+    <version>1.3.0-SNAPSHOT</version>
     <name>Wix Common Protocol API</name>
     <description>This module includes the common domain object and models.</description>
 
     <parent>
         <groupId>com.wix.commons</groupId>
         <artifactId>common-protocol-parent</artifactId>
-        <version>1.2.0</version>
+        <version>1.3.0-SNAPSHOT</version>
         <relativePath>../common-protocol-parent</relativePath>
     </parent>
 
