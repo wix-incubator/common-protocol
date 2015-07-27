@@ -28,6 +28,9 @@
         </developer>
     </developers>
 
+    <scm>
+        <url>https://github.com/wix/common-protocol</url>
+    </scm>
 
     <issueManagement>
         <url>https://github.com/wix/common-protocol/issues</url>
