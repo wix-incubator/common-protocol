@@ -5,7 +5,7 @@
     <groupId>com.wix.commons</groupId>
     <artifactId>common-protocol-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.5.0-SNAPSHOT</version>
+    <version>1.5.0</version>
     <name>Wix Common Protocol Parent</name>
     <description>The common parent (maven), which defines common properties, license, build, etc.</description>
     <url>https://github.com/wix/common-protocol</url>
@@ -30,7 +30,8 @@
 
     <scm>
         <url>https://github.com/wix/common-protocol</url>
-    </scm>
+      <tag>common-protocol-1.5.0</tag>
+  </scm>
 
     <issueManagement>
         <url>https://github.com/wix/common-protocol/issues</url>
