@@ -8,6 +8,7 @@
     <version>1.4.0-SNAPSHOT</version>
     <name>Wix Common Protocol Parent</name>
     <description>The common parent (maven), which defines common properties, license, build, etc.</description>
+    <url>https://github.com/wix/common-protocol</url>
 
 
     <developers>

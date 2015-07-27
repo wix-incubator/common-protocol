@@ -23,8 +23,8 @@
         <url>https://github.com/wix/common-protocol</url>
         <connection>scm:git:git@github.com:wix/common-protocol.git</connection>
         <developerConnection>scm:git:git@github.com:wix/common-protocol.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <developers>
         <developer>
