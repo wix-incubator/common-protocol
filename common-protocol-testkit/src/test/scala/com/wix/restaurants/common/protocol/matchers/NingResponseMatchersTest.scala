@@ -4,7 +4,7 @@
 **   / // // / //   |            http://www.wix.com/                 **
 **   \__/|__/_//_/| |                                                **
 \*                |/                                                 */
-package com.wix.commons.common.protocol.matchers
+package com.wix.restaurants.common.protocol.matchers
 
 
 import java.io.InputStream
@@ -15,9 +15,9 @@ import org.json4s.native.Serialization
 import org.specs2.mutable.SpecWithJUnit
 import com.ning.http.client.{Cookie, FluentCaseInsensitiveStringsMap}
 import com.ning.http.client.{Response => NingResponse}
-import com.wix.commons.common.protocol.api.{Error, Response}
-import com.wix.commons.common.protocol.matchers.NingResponseMatchers._
-import com.wix.commons.common.protocol.matchers.testmodel.TestBody
+import com.wix.restaurants.common.protocol.api.{Error, Response}
+import com.wix.restaurants.common.protocol.matchers.NingResponseMatchers._
+import com.wix.restaurants.common.protocol.matchers.testmodel.TestBody
 
 
 /** The Unit-Test of the [[NingResponseMatchers]] class.

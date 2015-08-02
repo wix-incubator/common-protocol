@@ -4,10 +4,10 @@
 **   / // // / //   |            http://www.wix.com/                 **
 **   \__/|__/_//_/| |                                                **
 \*                |/                                                 */
-package com.wix.commons.common.protocol.matchers.testmodel
+package com.wix.restaurants.common.protocol.matchers.testmodel
 
 
-/** This class is
+/** A dummy test body object
   *
   * @author <a href="mailto:ohadr@wix.com">Raz, Ohad</a>
   */

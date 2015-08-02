@@ -4,7 +4,7 @@
 **   / // // / //   |            http://www.wix.com/                 **
 **   \__/|__/_//_/| |                                                **
 \*                |/                                                 */
-package com.wix.commons.common.protocol.matchers
+package com.wix.restaurants.common.protocol.matchers
 
 
 import org.json4s.DefaultFormats
@@ -12,7 +12,7 @@ import org.json4s.native.Serialization
 import org.specs2.matcher.{AlwaysMatcher, Matcher}
 import org.specs2.matcher.Matchers._
 import com.ning.http.client.{Response => NingResponse}
-import com.wix.commons.common.protocol.api.{Error, Response}
+import com.wix.restaurants.common.protocol.api.{Error, Response}
 
 
 /** A trait that can be mixin with the test class or the context's {{{org.specs2.specification.Scope}}}.

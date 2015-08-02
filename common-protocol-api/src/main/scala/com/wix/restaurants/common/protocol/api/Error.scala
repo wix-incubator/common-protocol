@@ -4,7 +4,7 @@
 **   / // // / //   |            http://www.wix.com/                 **
 **   \__/|__/_//_/| |                                                **
 \*                |/                                                 */
-package com.wix.commons.common.protocol.api
+package com.wix.restaurants.common.protocol.api
 
 /** Encapsulates the data of an Error - its code and description.
   *

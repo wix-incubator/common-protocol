@@ -4,7 +4,7 @@
 **   / // // / //   |            http://www.wix.com/                 **
 **   \__/|__/_//_/| |                                                **
 \*                |/                                                 */
-package com.wix.commons.common.protocol.api
+package com.wix.restaurants.common.protocol.api
 
 /** Encapsulates the data for a Response.
   * It has mutual members - either a {{{value}}}, for successive response, or an {{{error}}}, for a failure response.

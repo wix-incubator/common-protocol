@@ -4,12 +4,12 @@
 **   / // // / //   |            http://www.wix.com/                 **
 **   \__/|__/_//_/| |                                                **
 \*                |/                                                 */
-package com.wix.commons.common.protocol.matchers
+package com.wix.restaurants.common.protocol.matchers
 
 
 import org.specs2.mutable.SpecWithJUnit
-import com.wix.commons.common.protocol.api.Error
-import com.wix.commons.common.protocol.matchers.ErrorMatchers._
+import com.wix.restaurants.common.protocol.api.Error
+import com.wix.restaurants.common.protocol.matchers.ErrorMatchers._
 
 
 /** The Unit-Test of the [[Error]] class.
