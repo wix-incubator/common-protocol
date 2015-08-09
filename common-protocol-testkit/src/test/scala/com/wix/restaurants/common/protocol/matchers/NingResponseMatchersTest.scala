@@ -38,11 +38,11 @@ class NingResponseMatchersTest extends SpecWithJUnit {
 
 
   "beResponse" should {
-    "match Response body" in {
+    "match Response value" in {
       val response = Response(resValue)
       val httpRespone = TestResponse(200, Serialization.write(response))
 
-      httpRespone must beResponse(body = ===(resValue))
+      httpRespone must beResponse(value = ===(resValue))
     }
 
     "produce clear description when failing on non 200 status code" in {
@@ -50,18 +50,18 @@ class NingResponseMatchersTest extends SpecWithJUnit {
       val response = Response(resValue)
       val httpRespone = TestResponse(someNon200Status, Serialization.write(response))
 
-      (httpRespone must beResponse(body = ===(resValue))) must
+      (httpRespone must beResponse(value = ===(resValue))) must
         throwAn[Exception](s"status '$someNon200Status' is not equal to '200'")
     }
 
-    "produce clear description when failing on non matching body" in {
+    "produce clear description when failing on non matching value" in {
       val otherResValue = resValue.copy(fieldNumber = 33333)
       val response = Response(otherResValue)
       val httpRespone = TestResponse(200, Serialization.write(response))
 
-      (httpRespone must beResponse(body = ===(resValue))) must
+      (httpRespone must beResponse(value = ===(resValue))) must
         throwAn[Exception](
-          s"response body '${regexEscape(otherResValue.toString)}'\\s* is not equal to \\s*'${regexEscape(resValue.toString)}'")
+          s"response value '${regexEscape(otherResValue.toString)}'\\s* is not equal to \\s*'${regexEscape(resValue.toString)}'")
     }
   }
 
@@ -83,7 +83,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
         throwAn[Exception](s"status '$someNon500Status' is not equal to '500'")
     }
 
-    "produce clear description when failing on non matching body" in {
+    "produce clear description when failing on non matching value" in {
       val otherError = error.copy(code = "33333")
       val response = Response(otherError)
       val httpRespone = TestResponse(500, Serialization.write(response))
@@ -97,14 +97,14 @@ class NingResponseMatchersTest extends SpecWithJUnit {
 
   "beForbidden" should {
     "match 403 status code" in {
-      val httpRespone = TestResponse(403, "some body")
+      val httpRespone = TestResponse(403, "some value")
 
       httpRespone must beForbidden
     }
 
     "produce clear description when failing on non 403 status code" in {
       val someNon403Status = 333
-      val httpRespone = TestResponse(someNon403Status, "some body")
+      val httpRespone = TestResponse(someNon403Status, "some value")
 
       (httpRespone must beForbidden) must
         throwAn[Exception](s"status '$someNon403Status' is not equal to '403'")

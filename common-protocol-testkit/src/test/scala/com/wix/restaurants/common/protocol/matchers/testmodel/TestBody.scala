@@ -7,7 +7,7 @@
 package com.wix.restaurants.common.protocol.matchers.testmodel
 
 
-/** A dummy test body object
+/** A dummy test value object
   *
   * @author <a href="mailto:ohadr@wix.com">Raz, Ohad</a>
   */
