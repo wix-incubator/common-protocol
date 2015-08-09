@@ -11,7 +11,7 @@ import org.json4s.DefaultFormats
 import org.json4s.native.Serialization
 import org.specs2.matcher.{AlwaysMatcher, Matcher}
 import org.specs2.matcher.Matchers._
-import com.ning.http.client.{Response => NingResponse}
+import com.ning.http.client.{Response => NingResponse, FluentCaseInsensitiveStringsMap}
 import com.wix.restaurants.common.protocol.api.{Error, Response}
 
 
@@ -26,10 +26,11 @@ trait NingResponseMatchers {
 
   implicit val formats = DefaultFormats
 
-  def beResponse[V : Manifest](value: Matcher[V] = AlwaysMatcher[V]()): Matcher[NingResponse] = {
+  def beResponse[V : Manifest](value: Matcher[V] = AlwaysMatcher[V](),
+                               headers: Matcher[FluentCaseInsensitiveStringsMap] = AlwaysMatcher()): Matcher[NingResponse] = {
     ===(HttpStatus.OK) ^^ { (_: NingResponse).getStatusCode aka "status" } and
-    value ^^ { (r: NingResponse) =>
-      Serialization.read[Response[V]](r.getResponseBody).value aka "response value" }
+      haveBody(value) and
+      headers ^^ { (_: NingResponse).getHeaders aka "headers" }
   }
 
   def beError(error: Matcher[Error] = AlwaysMatcher[Error]()): Matcher[NingResponse] = {
@@ -39,6 +40,10 @@ trait NingResponseMatchers {
 
   def beForbidden: Matcher[NingResponse] = {
     ===(HttpStatus.FORBIDDEN) ^^ { (_: NingResponse).getStatusCode aka "status" }
+  }
+
+  def haveBody[V : Manifest](body: Matcher[V] = AlwaysMatcher()): Matcher[NingResponse] = {
+    body ^^ { (r: NingResponse) => Serialization.read[V](r.getResponseBody) aka "response body" }
   }
 
 
