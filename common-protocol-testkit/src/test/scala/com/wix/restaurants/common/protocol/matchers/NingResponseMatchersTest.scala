@@ -38,11 +38,11 @@ class NingResponseMatchersTest extends SpecWithJUnit {
 
 
   "beResponse" should {
-    "match Response value" in {
+    "match Response body" in {
       val response = Response(resValue)
       val httpRespone = TestResponse(200, Serialization.write(response))
 
-      httpRespone must beResponse(value = ===(resValue))
+      httpRespone must beResponse(body = ===(resValue))
     }
 
     "produce clear description when failing on non 200 status code" in {
@@ -50,7 +50,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
       val response = Response(resValue)
       val httpRespone = TestResponse(someNon200Status, Serialization.write(response))
 
-      (httpRespone must beResponse(value = ===(resValue))) must
+      (httpRespone must beResponse(body = ===(resValue))) must
         throwAn[Exception](s"status '$someNon200Status' is not equal to '200'")
     }
 
@@ -59,9 +59,9 @@ class NingResponseMatchersTest extends SpecWithJUnit {
       val response = Response(otherResValue)
       val httpRespone = TestResponse(200, Serialization.write(response))
 
-      (httpRespone must beResponse(value = ===(resValue))) must
+      (httpRespone must beResponse(body = ===(resValue))) must
         throwAn[Exception](
-          s"response value '${regexEscape(otherResValue.toString)}'\\s* is not equal to \\s*'${regexEscape(resValue.toString)}'")
+          s"response body '${regexEscape(otherResValue.toString)}'\\s* is not equal to \\s*'${regexEscape(resValue.toString)}'")
     }
   }
 

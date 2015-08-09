@@ -26,10 +26,12 @@ trait NingResponseMatchers {
 
   implicit val formats = DefaultFormats
 
-  def beResponse[V : Manifest](value: Matcher[V] = AlwaysMatcher[V](),
+  def beResponse[V : Manifest](body: Matcher[V] = AlwaysMatcher[V](),
                                headers: Matcher[FluentCaseInsensitiveStringsMap] = AlwaysMatcher()): Matcher[NingResponse] = {
     ===(HttpStatus.OK) ^^ { (_: NingResponse).getStatusCode aka "status" } and
-      haveBody(value) and
+      haveBody(body) and 
+//    body ^^ { (r: NingResponse) =>
+//      Serialization.read[Response[V]](r.getResponseBody).body aka "response body" } and
       headers ^^ { (_: NingResponse).getHeaders aka "headers" }
   }
 
@@ -42,10 +44,10 @@ trait NingResponseMatchers {
     ===(HttpStatus.FORBIDDEN) ^^ { (_: NingResponse).getStatusCode aka "status" }
   }
 
-  def haveBody[V : Manifest](body: Matcher[V] = AlwaysMatcher()): Matcher[NingResponse] = {
-    body ^^ { (r: NingResponse) => Serialization.read[V](r.getResponseBody) aka "response body" }
+  def haveBody[V: Manifest](body: Matcher[V] = AlwaysMatcher[V]()): Matcher[NingResponse] = {
+    body ^^ { (r: NingResponse) =>
+      Serialization.read[Response[V]](r.getResponseBody).value aka "response body" }
   }
-
 
   object HttpStatus {
     val OK = 200
