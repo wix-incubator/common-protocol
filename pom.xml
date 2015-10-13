@@ -6,7 +6,7 @@
     <groupId>com.wix.restaurants</groupId>
     <artifactId>common-protocol</artifactId>
     <packaging>pom</packaging>
-    <version>1.9.0-SNAPSHOT</version>
+    <version>1.10.0</version>
     <name>Wix Common Protocol</name>
     <description>Wix Common Protocol Aggregator</description>
     <url>https://github.com/wix/common-protocol</url>
@@ -15,7 +15,7 @@
     <parent>
         <groupId>com.wix.restaurants</groupId>
         <artifactId>common-protocol-parent</artifactId>
-        <version>1.9.0-SNAPSHOT</version>
+        <version>1.10.0</version>
         <relativePath>common-protocol-parent</relativePath>
     </parent>
 
@@ -23,7 +23,7 @@
         <url>https://github.com/wix/common-protocol</url>
         <connection>scm:git:git@github.com:wix/common-protocol.git</connection>
         <developerConnection>scm:git:git@github.com:wix/common-protocol.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>common-protocol-1.11.0</tag>
     </scm>
 
     <developers>
