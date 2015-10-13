@@ -35,7 +35,7 @@ trait NingResponseMatchers {
 
   def beError(error: Matcher[Error] = AlwaysMatcher[Error]()): Matcher[NingResponse] = {
     ===(HttpStatus.INTERNAL_SERVER_ERROR) ^^ { (_: NingResponse).getStatusCode aka "status" } and
-    error ^^ { (r: NingResponse) => Serialization.read[Response[Any]](r.getResponseBody).error aka "response error" }
+    error ^^ { (r: NingResponse) => Serialization.read[Response[Any]](r.getResponseBody).error.get aka "response error" }
   }
 
   def beForbidden: Matcher[NingResponse] = {
@@ -44,7 +44,7 @@ trait NingResponseMatchers {
 
   def haveValue[V: Manifest](value: Matcher[V] = AlwaysMatcher[V]()): Matcher[NingResponse] = {
     value ^^ { (r: NingResponse) =>
-      Serialization.read[Response[V]](r.getResponseBody).value aka "response value" }
+      Serialization.read[Response[V]](r.getResponseBody).value.get aka "response value" }
   }
 
   

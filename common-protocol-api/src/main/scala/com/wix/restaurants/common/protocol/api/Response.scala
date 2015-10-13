@@ -11,7 +11,7 @@ package com.wix.restaurants.common.protocol.api
   *
   * @author <a href="mailto:ohadr@wix.com">Raz, Ohad</a>
   */
-case class Response[V] private (value: V, error: Error)
+case class Response[V] private (value: Option[V] = None, error: Option[Error] = None)
 
 
 /** The companion object of the [[Response]] case class, introduces the means to create a response, a successive one
@@ -20,6 +20,6 @@ case class Response[V] private (value: V, error: Error)
   * @author <a href="mailto:ohadr@wix.com">Raz, Ohad</a>
   */
 object Response {
-  def apply[V](value: V): Response[V] = Response(value, null)
-  def apply[V](error: Error): Response[V] = Response(null.asInstanceOf[V], error)
+  def apply[V](value: V): Response[V] = Response(Some(value), None)
+  def apply[V](error: Error): Response[V] = Response(None, Some(error))
 }

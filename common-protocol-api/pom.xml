@@ -35,4 +35,14 @@
             </roles>
         </developer>
     </developers>
+
+    <dependencies>
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.json4s</groupId>
+            <artifactId>json4s-native_${scala.dependencies.version}</artifactId>
+            <version>${org.json4js.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
