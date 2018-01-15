@@ -51,7 +51,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
       val httpRespone = TestResponse(someNon200Status, Serialization.write(response))
 
       (httpRespone must beResponse(value = ===(resValue))) must
-        throwAn[Exception](s"status '$someNon200Status' is not equal to '200'")
+        throwAn[Exception](s"status '$someNon200Status != 200'")
     }
 
     "produce clear description when failing on non matching value" in {
@@ -61,7 +61,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
 
       (httpRespone must beResponse(value = ===(resValue))) must
         throwAn[Exception](
-          s"response value '${regexEscape(otherResValue.toString)}'\\s* is not equal to \\s*'${regexEscape(resValue.toString)}'")
+          s"response value '${regexEscape(otherResValue.toString)} != ${regexEscape(resValue.toString)}'")
     }
   }
 
@@ -80,7 +80,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
       val httpRespone = TestResponse(someNon500Status, Serialization.write(response))
 
       (httpRespone must beError(error = ===(error))) must
-        throwAn[Exception](s"status '$someNon500Status' is not equal to '500'")
+        throwAn[Exception](s"status '$someNon500Status != 500'")
     }
 
     "produce clear description when failing on non matching value" in {
@@ -90,7 +90,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
 
       (httpRespone must beError(error = ===(error))) must
         throwAn[Exception](
-          s"response error '${regexEscape(otherError.toString)}'\\s* is not equal to \\s*'${regexEscape(error.toString)}'")
+          s"response error '${regexEscape(otherError.toString)} != ${regexEscape(error.toString)}'")
     }
   }
 
@@ -107,7 +107,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
       val httpRespone = TestResponse(someNon403Status, "some value")
 
       (httpRespone must beForbidden) must
-        throwAn[Exception](s"status '$someNon403Status' is not equal to '403'")
+        throwAn[Exception](s"status '$someNon403Status != 403'")
     }
   }
 
