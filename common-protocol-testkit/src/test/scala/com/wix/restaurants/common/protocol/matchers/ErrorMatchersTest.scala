@@ -39,14 +39,14 @@ class ErrorMatchersTest extends SpecWithJUnit {
       val someOtherErrorCode = "some other code"
 
       (error must beError(code = ===(someOtherErrorCode))) must
-        throwAn[Exception](message = s"error code '$code' is not equal to '$someOtherErrorCode'")
+        throwAn[Exception](message = s"error code ''$code' != '$someOtherErrorCode''")
     }
 
     "produce clear description when failing to match description" in {
       val someOtherErrorDescription = "some other description"
 
       (error must beError(description = ===(someOtherErrorDescription))) must
-        throwAn[Exception](message = s"error description '$desc'\\s* is not equal to \\s*'$someOtherErrorDescription'")
+        throwAn[Exception](message = s"error description ''$desc' != '$someOtherErrorDescription''")
     }
   }
 }
