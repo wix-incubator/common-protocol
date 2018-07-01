@@ -8,16 +8,17 @@ package com.wix.restaurants.common.protocol.matchers
 
 
 import java.io.InputStream
-import java.net.URI
 import java.nio.ByteBuffer
 import java.util
-import org.json4s.native.Serialization
-import org.specs2.mutable.SpecWithJUnit
-import com.ning.http.client.{Cookie, FluentCaseInsensitiveStringsMap}
-import com.ning.http.client.{Response => NingResponse}
+
+import com.ning.http.client.cookie.Cookie
+import com.ning.http.client.uri.Uri
+import com.ning.http.client.{FluentCaseInsensitiveStringsMap, Response => NingResponse}
 import com.wix.restaurants.common.protocol.api.{Error, Response}
 import com.wix.restaurants.common.protocol.matchers.NingResponseMatchers._
 import com.wix.restaurants.common.protocol.matchers.testmodel.TestBody
+import org.json4s.native.Serialization
+import org.specs2.mutable.SpecWithJUnit
 
 
 /** The Unit-Test of the [[NingResponseMatchers]] class.
@@ -138,7 +139,7 @@ class NingResponseMatchersTest extends SpecWithJUnit {
     override def getResponseBody(charset: String): String = throw new UnsupportedOperationException
     override def getContentType: String = throw new UnsupportedOperationException
     override def hasResponseStatus: Boolean = throw new UnsupportedOperationException
-    override def getUri: URI = throw new UnsupportedOperationException
+    override def getUri: Uri = throw new UnsupportedOperationException
     override def getHeader(name: String): String = throw new UnsupportedOperationException
   }
 }
