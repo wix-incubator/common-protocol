@@ -7,7 +7,7 @@
     <groupId>com.wix.restaurants</groupId>
     <artifactId>common-protocol-testkit</artifactId>
     <packaging>jar</packaging>
-    <version>1.12.0</version>
+    <version>1.13.0-SNAPSHOT</version>
     <name>Wix Common Protocol TestKit</name>
     <description>This module includes tools and matchers for requests, common domain objects, and models.</description>
 
@@ -15,7 +15,7 @@
     <parent>
         <groupId>com.wix.restaurants</groupId>
         <artifactId>common-protocol-parent</artifactId>
-        <version>1.12.0</version>
+        <version>1.13.0-SNAPSHOT</version>
         <relativePath>../common-protocol-parent</relativePath>
     </parent>
 
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.wix.restaurants</groupId>
             <artifactId>common-protocol-api</artifactId>
-            <version>1.12.0</version>
+            <version>1.13.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.ning</groupId>
